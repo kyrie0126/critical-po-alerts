@@ -6,7 +6,7 @@ export default async function Page(props: { params: Promise<{poId: string, poLin
     const purchaseOrderLine = params.poLine;
     
     return (
-        <div>
+        <div className="space-y-6 p-6">
             <BreadcrumbsPurchaseOrderLine
                 purchaseOrderId={purchaseOrderId}
                 purchaseOrderLine={purchaseOrderLine}

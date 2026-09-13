@@ -8,7 +8,7 @@ export default async function Page(props: { params: Promise<{poId: string}>  }) 
     const purchaseOrderIdData = await getPurchaseOrderId(purchaseOrderId);
 
     return (
-        <div>
+        <div className="space-y-6 p-6">
             <BreadcrumbsPurchaseOrderId purchaseOrderId={purchaseOrderId} />
             <div>
                 po page

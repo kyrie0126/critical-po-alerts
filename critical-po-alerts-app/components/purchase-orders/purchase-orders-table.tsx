@@ -8,13 +8,13 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
-import { getPurchaseOrderDeliveries } from "@/lib/data/purchase-orders";
+import { fetchPurchaseOrderDeliveries } from "@/lib/data/purchase-orders";
 import { formatCurrency } from "@/lib/utils";
 import Link from "next/link";
 
-export default async function PurchaseOrdersTable() {
+export default async function PurchaseOrdersTable({query}: {query:string}) {
 
-    const purchaseOrderDeliveries = await getPurchaseOrderDeliveries();
+    const purchaseOrderDeliveries = await fetchPurchaseOrderDeliveries(query);
 
     return (
         <Table>

@@ -1,12 +1,20 @@
 import PurchaseOrdersTable from "@/components/purchase-orders/purchase-orders-table";
 import { BreadcrumbsAllPurchaseOrders } from "@/components/purchase-orders/breadcrumbs";
+import Search from "@/components/search";
 
+export default async function Page(props: {
+    searchParams?: Promise<{
+        query?: string
+    }>
+}) {
+    const searchParams = await props.searchParams;
+    const query = searchParams?.query || "";
 
-export default function Page() {
     return (
-        <div>
+        <div className="space-y-6 p-6">
             <BreadcrumbsAllPurchaseOrders />
-            <PurchaseOrdersTable />
+            <Search placeholder="Search deliveries..." />
+            <PurchaseOrdersTable query={query} />
         </div>
     )
 }
